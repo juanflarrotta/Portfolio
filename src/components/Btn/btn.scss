@@ -1,0 +1,58 @@
+@import "../../styles/variables.scss";
+
+.btn {
+  background-color: transparent;
+  cursor: pointer;
+  &__menu {
+    position: absolute;
+    width: portion(2.25);
+    height: portion(2.25);
+    border-radius: 50%;
+    opacity: 0.7;
+    transition: opacity 0.25s;
+    transform: translate(125px, 125px);
+    &:hover {
+      opacity: 1;
+    }
+    &.active {
+      z-index: 1;
+      background-color: $white;
+      //animation: showBtn 0.75s ease forwards;
+    }
+  }
+}
+.icon {
+  &__menu {
+    width: portion(2);
+    height: 5px;
+    background-color: $white;
+    display: block;
+    margin: 0 auto 3px auto;
+    border-radius: 16px;
+    transition: opacity 0.5s, visibility 0s, height 0.25s, transform 0.5s;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    &.close {
+      background-color: $yellow;
+      width: portion(1.5);
+      &:nth-child(1) {
+        transform: rotate(45deg) translate(2.5px, 2.5px);
+      }
+      &:nth-child(2) {
+        opacity: 0;
+        visibility: hidden;
+        height: 0;
+        transition: height 0s;
+      }
+      &:nth-child(3) {
+        transform: rotate(135deg) translate(-3px, 3px);
+      }
+    }
+  }
+}
+@keyframes showBtn {
+  100% {
+    transform: translate(0px, 25px);
+  }
+}

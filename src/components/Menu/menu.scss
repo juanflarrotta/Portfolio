@@ -1,0 +1,63 @@
+@import "../../styles/variables.scss";
+.menu {
+  $menu: &;
+  background-color: $yellow;
+  position: relative;
+  border-radius: 100%;
+  width: portion(12.5);
+  height: portion(12.5);
+  left: 0;
+  top: 0;
+  transform: translate(-50%, -50%);
+  &.hidden {
+    animation: fadeMenu 0.75s ease forwards;
+  }
+  &.active {
+    animation: showMenu 0.75s ease forwards;
+  }
+  &__list {
+    @include flex(column, nowrap, center, space-evenly, center);
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+    #{$menu}.active & {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  &__item {
+    color: $white;
+    cursor: pointer;
+    font: portion(2) "firaBlack";
+    transition: all 0.25s;
+    text-transform: uppercase;
+    a {
+      color: $white;
+    }
+    &:hover {
+      transform: scale(1.75);
+    }
+  }
+}
+
+@keyframes showMenu {
+  90% {
+    width: 100vw;
+    height: 100vh;
+    transform: translate(0, 0);
+  }
+  100% {
+    width: 100vw;
+    height: 100vh;
+    transform: translate(0, 0);
+    border-radius: 0;
+  }
+}
+@keyframes fadeMenu {
+  0% {
+    width: 100vw;
+    height: 100vh;
+    transform: translate(0, 0);
+    border-radius: 0;
+  }
+}

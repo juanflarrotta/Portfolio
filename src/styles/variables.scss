@@ -1,0 +1,45 @@
+//Fonts
+@font-face {
+  font-family: "firaRegular";
+  src: url(./fonts/FiraSans-Regular.ttf) format("truetype");
+}
+@font-face {
+  font-family: "firaMedium";
+  src: url(./fonts/FiraSans-Medium.ttf) format("truetype");
+}
+@font-face {
+  font-family: "firaBold";
+  src: url(./fonts/FiraSans-Bold.ttf) format("truetype");
+}
+@font-face {
+  font-family: "firaBlack";
+  src: url(./fonts/FiraSans-Black.ttf) format("truetype");
+}
+
+// Mixin
+@mixin flex(
+  $flex-direction,
+  $flex-wrap,
+  $align-content,
+  $justify-content,
+  $align-items
+) {
+  display: flex;
+  flex-direction: $flex-direction;
+  flex-wrap: $flex-wrap;
+  align-content: $align-content;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+
+//Function
+@function portion($numero) {
+  $size: 16px;
+  @return $size * $numero;
+}
+
+//Colors
+
+$yellow: #ffc901;
+$white: #fff;
+$black: #000;
